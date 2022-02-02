@@ -16,8 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_background" translatesAutoresizingMaskIntoConstraints="NO" id="jb9-Xv-9Nx">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OAM-07-HeZ">
-                                <rect key="frame" x="36" y="436" width="342" height="34"/>
+                                <rect key="frame" x="36" y="80" width="342" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dYp-s8-dza"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -25,17 +31,25 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="OAM-07-HeZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="6ks-ja-Wwm" customClass="LayoutConstraint" customModule="Business" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="style" value="XL"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OAM-07-HeZ" secondAttribute="trailing" constant="36" id="BsI-Xd-fHU" customClass="LayoutConstraint" customModule="Business" customModuleProvider="target">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="style" value="XL"/>
                                 </userDefinedRuntimeAttributes>
                             </constraint>
-                            <constraint firstItem="OAM-07-HeZ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="CHz-l3-pVR"/>
+                            <constraint firstItem="jb9-Xv-9Nx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aM2-a1-hIp"/>
+                            <constraint firstAttribute="bottom" secondItem="jb9-Xv-9Nx" secondAttribute="bottom" id="osA-kO-cAB"/>
                             <constraint firstItem="OAM-07-HeZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="rOn-MN-CQW" customClass="LayoutConstraint" customModule="Business" customModuleProvider="target">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="style" value="XL"/>
                                 </userDefinedRuntimeAttributes>
                             </constraint>
+                            <constraint firstAttribute="trailing" secondItem="jb9-Xv-9Nx" secondAttribute="trailing" id="tED-7A-CHV"/>
+                            <constraint firstItem="jb9-Xv-9Nx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="x8D-64-TTp"/>
                         </constraints>
                     </view>
                     <connections>
@@ -48,6 +62,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="splash_background" width="960" height="1310.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
