@@ -16,3 +16,8 @@ Portrait
 ### Device support
 iPhone, iPod touch
 
+### Localization
+English
+French (Canada)
+Spanish (Latin America)
+

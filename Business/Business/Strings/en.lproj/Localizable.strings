@@ -1,0 +1,10 @@
+/* 
+  Labels.strings
+  Business
+
+  Created by Tulakshana Weerasooriya on 2022-02-01.
+  
+*/
+
+"error_no_internet" = "Please check your internet connection";
+"placeholder_search" = "Type in what you are looking for";

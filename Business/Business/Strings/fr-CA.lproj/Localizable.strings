@@ -1,0 +1,10 @@
+/* 
+  Labels.strings
+  Business
+
+  Created by Tulakshana Weerasooriya on 2022-02-01.
+  
+*/
+
+"error_no_internet" = "S'il vous plait, vérifiez votre connexion internet";
+"placeholder_search" = "Tapez ce que vous cherchez";
