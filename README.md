@@ -17,9 +17,11 @@ Portrait
 iPhone, iPod touch
 
 ### Localization
-English
-French (Canada)
+English, French (Canada)
 
-### Setup
+### Accessibility
+Compatible with the screen reader
+
+## Setup
 Set the Yelp_API_Key in Info.plist
 
