@@ -9,25 +9,31 @@ import Foundation
 import CoreLocation
 
 protocol HomeDelegate: NSObjectProtocol {
-    func homeDidThrowAnError(model: HomeViewModel, error: HomeViewModel.Error)
+    func homeDidThrowAnError(model: HomeViewModel, error: String)
 }
 
 class HomeViewModel: NSObject {
     
-    enum Error {
+    enum HomeError {
         case locationServicesDisabled
+        case somethingWentWrong
         
         func message() -> String {
             switch self {
             case .locationServicesDisabled:
                 return NSLocalizedString("error_location_services_disabled",
                                          comment: "Location services are disabled")
+            case .somethingWentWrong:
+                return NSLocalizedString("error_something_went_wrong",
+                                         comment: "Something went wrong. Please try again!")
             }
         }
     }
     
     private let locManager = CLLocationManager.init()
     weak var delegate: HomeDelegate?
+    
+    // MARK: - Location handling
     
     func startLocationService() {
         guard CLLocationManager.locationServicesEnabled() else {
@@ -52,12 +58,41 @@ class HomeViewModel: NSObject {
         }
     }
     
+    // MARK: - Errors
+    
+    private func throwSomethingWentWrongError() {
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.delegate?.homeDidThrowAnError(model: strongSelf, error: HomeViewModel.HomeError.somethingWentWrong.message())
+        }
+    }
+    
     private func throwLocationServicesDisabledError() {
         DispatchQueue.main.async { [weak self] in
             guard let strongSelf = self else {
                 return
             }
-            strongSelf.delegate?.homeDidThrowAnError(model: strongSelf, error: HomeViewModel.Error.locationServicesDisabled)
+            strongSelf.delegate?.homeDidThrowAnError(model: strongSelf, error: HomeViewModel.HomeError.locationServicesDisabled.message())
+        }
+    }
+    
+    // MARK: -
+    
+    func search(term: String) {
+        guard let loc = locManager.location else {
+            handleAuthorization()
+            throwSomethingWentWrongError()
+            return
+        }
+        API.search(term: term, location: loc) { [weak self] (error: Error?, response: SearchResponse?) in
+            if error != nil {
+                self?.throwSomethingWentWrongError()
+                return
+            }
+            
+            
         }
     }
 }

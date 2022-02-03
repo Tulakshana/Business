@@ -19,5 +19,7 @@ iPhone, iPod touch
 ### Localization
 English
 French (Canada)
-Spanish (Latin America)
+
+### Setup
+Set the Yelp_API_Key in Info.plist
 

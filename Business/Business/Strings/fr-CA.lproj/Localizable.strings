@@ -7,4 +7,5 @@
 */
 
 "error_location_services_disabled" = "Les services de localisation sont désactivés";
+"error_something_went_wrong" = "Quelque chose s'est mal passé. Veuillez réessayer!";
 "placeholder_search" = "Tapez ce que vous cherchez";

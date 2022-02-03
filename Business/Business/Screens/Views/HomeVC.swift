@@ -20,13 +20,16 @@ class HomeVC: UIViewController {
             // Search term
             searchTextField.font = Style.Font.paragraph.value()
             searchTextField.textColor = Style.Color.text.value()
+            
+            searchTextField.delegate = self
+            searchTextField.returnKeyType = .search
         }
     }
     
-    @IBOutlet weak var infoLabel: UILabel! {
+    @IBOutlet weak var errorLabel: UILabel! {
         didSet {
-            infoLabel.font = Style.Font.paragraph.value()
-            infoLabel.textColor = Style.Color.error.value()
+            errorLabel.font = Style.Font.paragraph.value()
+            errorLabel.textColor = Style.Color.error.value()
         }
     }
     
@@ -44,18 +47,36 @@ class HomeVC: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveDidBecomeActiveNotification(notification:)), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        searchTextField.becomeFirstResponder()
+    }
 
     // MARK: -
     
     @objc private func didReceiveDidBecomeActiveNotification(notification: Notification) {
-        infoLabel.text = ""
+        errorLabel.text = ""
         viewModel.startLocationService()
     }
 
 }
 
 extension HomeVC: HomeDelegate {
-    func homeDidThrowAnError(model: HomeViewModel, error: HomeViewModel.Error) {
-        infoLabel.text = error.message()
+    func homeDidThrowAnError(model: HomeViewModel, error: String) {
+        errorLabel.text = error
+    }
+}
+
+extension HomeVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let text = textField.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines), !text.isEmpty else {
+            textField.text = ""
+            return true
+        }
+        errorLabel.text = ""
+        viewModel.search(term: text)
+        return true
     }
 }
