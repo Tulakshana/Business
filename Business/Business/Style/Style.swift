@@ -36,11 +36,11 @@ struct Style {
         func value() -> UIFont {
             switch self {
             case .paragraph:
-                return UIFont.systemFont(ofSize: 12.0)
+                return UIFont.systemFont(ofSize: 15.0)
             case .title:
-                return UIFont.boldSystemFont(ofSize: 16.0)
+                return UIFont.boldSystemFont(ofSize: 20.0)
             case .subtitle:
-                return UIFont.systemFont(ofSize: 14.0)
+                return UIFont.systemFont(ofSize: 18.0)
             }
         }
     }

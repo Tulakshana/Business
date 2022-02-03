@@ -6,5 +6,5 @@
   
 */
 
-"error_no_internet" = "Please check your internet connection";
+"error_location_services_disabled" = "Location services are disabled";
 "placeholder_search" = "Type in what you are looking for";

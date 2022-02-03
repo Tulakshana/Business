@@ -18,6 +18,8 @@
 		BD5DD52227AA655200FA14EB /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5DD52027AA655200FA14EB /* HomeVC.swift */; };
 		BD5DD52827AA667900FA14EB /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5DD52727AA667900FA14EB /* Style.swift */; };
 		BD5DD52D27AA691500FA14EB /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5DD52C27AA691500FA14EB /* LayoutConstraint.swift */; };
+		BDB42B7127AB4CD5006FE792 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB42B7027AB4CD5006FE792 /* HomeViewModel.swift */; };
+		BDB42BB427AB6547006FE792 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BDB42BB627AB6547006FE792 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,11 +54,13 @@
 		BD5DD4DD27AA2EED00FA14EB /* BusinessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessUITests.swift; sourceTree = "<group>"; };
 		BD5DD4DF27AA2EED00FA14EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD5DD51327AA60EF00FA14EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		BD5DD51827AA631200FA14EB /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		BD5DD51F27AA637600FA14EB /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		BD5DD52027AA655200FA14EB /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BD5DD52727AA667900FA14EB /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		BD5DD52C27AA691500FA14EB /* LayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
+		BDB42B7027AB4CD5006FE792 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BDB42BB527AB6547006FE792 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BDB42BBA27AB654C006FE792 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 		BD5DD4F227AA324A00FA14EB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BDB42B7027AB4CD5006FE792 /* HomeViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				BD5DD51427AA60EF00FA14EB /* Localizable.strings */,
+				BDB42BB627AB6547006FE792 /* InfoPlist.strings */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -280,7 +286,6 @@
 			knownRegions = (
 				en,
 				Base,
-				"es-419",
 				"fr-CA",
 			);
 			mainGroup = BD5DD4AF27AA2EE500FA14EB;
@@ -304,6 +309,7 @@
 				BD5DD51227AA60EF00FA14EB /* Localizable.strings in Resources */,
 				BD5DD4C527AA2EEC00FA14EB /* Assets.xcassets in Resources */,
 				BD5DD4C327AA2EE600FA14EB /* Main.storyboard in Resources */,
+				BDB42BB427AB6547006FE792 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD5DD52227AA655200FA14EB /* HomeVC.swift in Sources */,
+				BDB42B7127AB4CD5006FE792 /* HomeViewModel.swift in Sources */,
 				BD5DD52D27AA691500FA14EB /* LayoutConstraint.swift in Sources */,
 				BD5DD4BC27AA2EE600FA14EB /* AppDelegate.swift in Sources */,
 				BD5DD4BE27AA2EE600FA14EB /* SceneDelegate.swift in Sources */,
@@ -388,10 +395,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				BD5DD51327AA60EF00FA14EB /* en */,
-				BD5DD51827AA631200FA14EB /* es-419 */,
 				BD5DD51F27AA637600FA14EB /* fr-CA */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		BDB42BB627AB6547006FE792 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDB42BB527AB6547006FE792 /* en */,
+				BDB42BBA27AB654C006FE792 /* fr-CA */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -522,6 +537,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Business/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -540,6 +556,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Business/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

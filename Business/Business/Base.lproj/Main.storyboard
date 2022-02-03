@@ -16,10 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_background" translatesAutoresizingMaskIntoConstraints="NO" id="jb9-Xv-9Nx">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_background" translatesAutoresizingMaskIntoConstraints="NO" id="jb9-Xv-9Nx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OAM-07-HeZ">
+                            <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="342" placeholderIntrinsicHeight="40" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OAM-07-HeZ">
                                 <rect key="frame" x="36" y="80" width="342" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="dYp-s8-dza"/>
@@ -27,6 +27,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="342" placeholderIntrinsicHeight="21" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYU-bh-WV8" userLabel="Info label">
+                                <rect key="frame" x="36" y="128" width="342" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -41,8 +47,15 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="style" value="XL"/>
                                 </userDefinedRuntimeAttributes>
                             </constraint>
+                            <constraint firstItem="qYU-bh-WV8" firstAttribute="centerX" secondItem="OAM-07-HeZ" secondAttribute="centerX" id="Fyu-dY-Z03"/>
                             <constraint firstItem="jb9-Xv-9Nx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aM2-a1-hIp"/>
+                            <constraint firstItem="qYU-bh-WV8" firstAttribute="top" secondItem="OAM-07-HeZ" secondAttribute="bottom" constant="8" id="cEL-IW-ZmO" customClass="LayoutConstraint" customModule="Business" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="style" value="S"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
                             <constraint firstAttribute="bottom" secondItem="jb9-Xv-9Nx" secondAttribute="bottom" id="osA-kO-cAB"/>
+                            <constraint firstItem="qYU-bh-WV8" firstAttribute="width" secondItem="OAM-07-HeZ" secondAttribute="width" id="pli-1k-Xou"/>
                             <constraint firstItem="OAM-07-HeZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="rOn-MN-CQW" customClass="LayoutConstraint" customModule="Business" customModuleProvider="target">
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="style" value="XL"/>
@@ -53,12 +66,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="infoLabel" destination="qYU-bh-WV8" id="yCJ-ZW-cwc"/>
                         <outlet property="searchTextField" destination="OAM-07-HeZ" id="XAm-aw-rmA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="101"/>
+            <point key="canvasLocation" x="137.68115942028987" y="100.44642857142857"/>
         </scene>
     </scenes>
     <resources>

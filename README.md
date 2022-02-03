@@ -8,7 +8,7 @@ Business is an iOS app powered by Yelp API (https://www.yelp.ca/developers/docum
 5.0
 
 ### Minimum iOS version
-14.3
+13.0
 
 ### Orientation support
 Portrait

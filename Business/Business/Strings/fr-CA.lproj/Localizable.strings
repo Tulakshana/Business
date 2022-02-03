@@ -6,5 +6,5 @@
   
 */
 
-"error_no_internet" = "S'il vous plait, vérifiez votre connexion internet";
+"error_location_services_disabled" = "Les services de localisation sont désactivés";
 "placeholder_search" = "Tapez ce que vous cherchez";
