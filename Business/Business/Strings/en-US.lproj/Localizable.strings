@@ -1,0 +1,11 @@
+/* 
+  Labels.strings
+  Business
+
+  Created by Tulakshana Weerasooriya on 2022-02-01.
+  
+*/
+
+"error_location_services_disabled" = "Location services are disabled";
+"error_something_went_wrong" = "Something went wrong. Please try again!";
+"placeholder_search" = "Type in what you are looking for";

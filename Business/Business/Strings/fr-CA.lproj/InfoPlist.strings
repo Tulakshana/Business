@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Business
+
+  Created by Tulakshana Weerasooriya on 2022-02-02.
+  
+*/
+
+"NSLocationWhenInUseUsageDescription" = "La recherche d'entreprises est propulsée par Yelp et nécessite l'accès à votre position lorsque vous utilisez l'application.";

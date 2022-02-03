@@ -8,11 +8,18 @@ Business is an iOS app powered by Yelp API (https://www.yelp.ca/developers/docum
 5.0
 
 ### Minimum iOS version
-14.3
+13.0
 
 ### Orientation support
 Portrait
 
 ### Device support
 iPhone, iPod touch
+
+### Localization
+English
+French (Canada)
+
+### Setup
+Set the Yelp_API_Key in Info.plist
 
