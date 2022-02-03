@@ -33,6 +33,8 @@ class HomeVC: UIViewController {
         }
     }
     
+    @IBOutlet weak var searchResultsTable: UITableView!
+    
     // MARK: -
     
     private let viewModel = HomeViewModel()
@@ -46,6 +48,9 @@ class HomeVC: UIViewController {
         viewModel.startLocationService()
         
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveDidBecomeActiveNotification(notification:)), name: UIApplication.didBecomeActiveNotification, object: nil)
+        
+        searchResultsTable.register(UINib.init(nibName: SearchCell.nibName, bundle: Bundle.main), forCellReuseIdentifier: SearchCell.reuseIdentifier)
+        searchResultsTable.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,6 +69,10 @@ class HomeVC: UIViewController {
 }
 
 extension HomeVC: HomeDelegate {
+    func homeDidReceiveNewSearchResults(model: HomeViewModel) {
+        searchResultsTable.reloadData()
+    }
+    
     func homeDidThrowAnError(model: HomeViewModel, error: String) {
         errorLabel.text = error
     }
@@ -80,3 +89,19 @@ extension HomeVC: UITextFieldDelegate {
         return true
     }
 }
+
+extension HomeVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.searchResults.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.reuseIdentifier) as? SearchCell else {
+            return UITableViewCell.init()
+        }
+        cell.setBusiness(b: viewModel.searchResults[indexPath.row])
+        return cell
+    }
+}
+
+

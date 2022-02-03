@@ -7,8 +7,11 @@
 
 import Foundation
 import CoreLocation
+import UIKit
 
 struct API {
+    static let timeOutInterval: TimeInterval = 30.0
+    
     struct BaseURL {
         static func value() -> String {
             #if IS_PRODUCTION
@@ -55,8 +58,6 @@ struct API {
     }
     
     static func request(request: URLRequest, method: API.Method, completion: @escaping ((_ error: Error?, _ response: Data?) -> Void)) {
-        
-        let semaphore = DispatchSemaphore (value: 0)
 
         var request = request
         request.addValue(API.Header.authorization.value(),
@@ -64,16 +65,13 @@ struct API {
         request.httpMethod = method.rawValue
 
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-          guard let data = data else {
+          if let data = data {
+            completion(nil, data)
+          } else {
             completion(error, nil)
-            return
           }
-          completion(nil, data)
-          semaphore.signal()
         }
-
         task.resume()
-        semaphore.wait()
     }
 }
 
@@ -87,7 +85,7 @@ extension API {
         let language = API.Language.init(rawValue: deviceLocale)?.rawValue ?? API.Language.enUS.rawValue
         let urlString = "\(API.BaseURL.value())\(API.Path.search.rawValue)?\(SearchParam.term)=\(urlEncodedTerm)&\(SearchParam.latitude)=\(location.coordinate.latitude)&\(SearchParam.longitude)=\(location.coordinate.longitude)&\(SearchParam.locale)=\(language)"
 
-        let request = URLRequest(url: URL(string: urlString)!,timeoutInterval: Double.infinity)
+        let request = URLRequest(url: URL(string: urlString)!,timeoutInterval: API.timeOutInterval)
         
         API.request(request: request, method: .GET) { (error: Error?, data: Data?) in
             guard let data = data else {

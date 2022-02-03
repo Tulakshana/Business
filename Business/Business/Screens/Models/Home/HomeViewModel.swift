@@ -10,6 +10,7 @@ import CoreLocation
 
 protocol HomeDelegate: NSObjectProtocol {
     func homeDidThrowAnError(model: HomeViewModel, error: String)
+    func homeDidReceiveNewSearchResults(model: HomeViewModel)
 }
 
 class HomeViewModel: NSObject {
@@ -32,6 +33,7 @@ class HomeViewModel: NSObject {
     
     private let locManager = CLLocationManager.init()
     weak var delegate: HomeDelegate?
+    var searchResults: [Business] = []
     
     // MARK: - Location handling
     
@@ -88,11 +90,23 @@ class HomeViewModel: NSObject {
         }
         API.search(term: term, location: loc) { [weak self] (error: Error?, response: SearchResponse?) in
             if error != nil {
+                self?.searchResults.removeAll()
                 self?.throwSomethingWentWrongError()
-                return
+            } else if let response = response,
+               let array = response.businesses {
+                self?.searchResults = array.filter({ (b: Business) -> Bool in
+                    guard let isEmpty = b.name?.isEmpty else {
+                        return false
+                    }
+                    return !isEmpty
+                })
             }
-            
-            
+            DispatchQueue.main.async {
+                guard let strongSelf = self else {
+                    return
+                }
+                strongSelf.delegate?.homeDidReceiveNewSearchResults(model: strongSelf)
+            }
         }
     }
 }
