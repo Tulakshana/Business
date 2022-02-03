@@ -8,10 +8,12 @@
 import UIKit
 
 class ImageView: UIImageView {
+    static let placeholder = UIImage.init(named: "image_placeholder")
+    
     var task: URLSessionDataTask?
     
     func loadImage(url: URL) {
-        image = UIImage.init(named: "image_placeholder")
+        image = ImageView.placeholder
         
         var request = URLRequest(url: url, timeoutInterval: API.timeOutInterval)
         request.httpMethod = API.Method.GET.rawValue

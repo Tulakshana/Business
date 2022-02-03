@@ -25,7 +25,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="179" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfa-Ib-9dS">
-                        <rect key="frame" x="116" y="8" width="384" height="179"/>
+                        <rect key="frame" x="116" y="8" width="384" height="171"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prk-Se-vNs">
+                        <rect key="frame" x="116" y="187" width="384" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -42,7 +48,13 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="style" value="S"/>
                         </userDefinedRuntimeAttributes>
                     </constraint>
+                    <constraint firstItem="Prk-Se-vNs" firstAttribute="width" secondItem="vfa-Ib-9dS" secondAttribute="width" id="Ksv-Nd-8P6"/>
                     <constraint firstItem="ibg-w8-K5q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LL5-bh-qvE"/>
+                    <constraint firstItem="Prk-Se-vNs" firstAttribute="top" secondItem="vfa-Ib-9dS" secondAttribute="bottom" constant="8" id="MZw-dA-ndE" customClass="LayoutConstraint" customModule="Business" customModuleProvider="target">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="style" value="S"/>
+                        </userDefinedRuntimeAttributes>
+                    </constraint>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ibg-w8-K5q" secondAttribute="bottom" constant="8" id="SiT-ID-O43" customClass="LayoutConstraint" customModule="Business" customModuleProvider="target">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="style" value="S"/>
@@ -63,16 +75,18 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="style" value="S"/>
                         </userDefinedRuntimeAttributes>
                     </constraint>
-                    <constraint firstAttribute="bottom" secondItem="vfa-Ib-9dS" secondAttribute="bottom" constant="8" id="pvM-82-dd5" customClass="LayoutConstraint" customModule="Business" customModuleProvider="target">
+                    <constraint firstAttribute="bottom" secondItem="Prk-Se-vNs" secondAttribute="bottom" constant="8" id="xVW-m1-2mo" customClass="LayoutConstraint" customModule="Business" customModuleProvider="target">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="style" value="S"/>
                         </userDefinedRuntimeAttributes>
                     </constraint>
+                    <constraint firstItem="Prk-Se-vNs" firstAttribute="centerX" secondItem="vfa-Ib-9dS" secondAttribute="centerX" id="yb9-j3-7vy"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="nameLabel" destination="vfa-Ib-9dS" id="1Q1-eF-5cc"/>
+                <outlet property="ratingLabel" destination="Prk-Se-vNs" id="LxS-aC-ICa"/>
                 <outlet property="thumbView" destination="ibg-w8-K5q" id="zND-rP-cgg"/>
             </connections>
             <point key="canvasLocation" x="215.94202898550725" y="176.45089285714286"/>

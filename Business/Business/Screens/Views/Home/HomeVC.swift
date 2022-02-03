@@ -33,7 +33,12 @@ class HomeVC: UIViewController {
         }
     }
     
-    @IBOutlet weak var searchResultsTable: UITableView!
+    @IBOutlet weak var searchResultsTable: UITableView! {
+        didSet {
+            searchResultsTable.register(UINib.init(nibName: SearchCell.nibName, bundle: Bundle.main), forCellReuseIdentifier: SearchCell.reuseIdentifier)
+            searchResultsTable.dataSource = self
+        }
+    }
     
     // MARK: -
     
@@ -48,9 +53,6 @@ class HomeVC: UIViewController {
         viewModel.startLocationService()
         
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveDidBecomeActiveNotification(notification:)), name: UIApplication.didBecomeActiveNotification, object: nil)
-        
-        searchResultsTable.register(UINib.init(nibName: SearchCell.nibName, bundle: Bundle.main), forCellReuseIdentifier: SearchCell.reuseIdentifier)
-        searchResultsTable.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {

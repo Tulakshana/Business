@@ -49,6 +49,7 @@ struct Style {
         case text
         case error
         case placeholder
+        case star
         
         func value() -> UIColor {
             switch self {
@@ -58,6 +59,8 @@ struct Style {
                 return UIColor.red
             case .placeholder:
                 return UIColor.lightGray
+            case .star:
+                return UIColor.yellow
             }
         }
     }

@@ -52,7 +52,7 @@ struct API {
                 guard let key = Plist.object(key: "Yelp_API_Key") as? String else {
                     return ""
                 }
-                return key
+                return "Bearer " + key
             }
         }
     }

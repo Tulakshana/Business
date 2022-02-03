@@ -132,7 +132,6 @@
 				BDB42BE927AB9E4B006FE792 /* Utilities */,
 				BD5DD50627AA60C300FA14EB /* Strings */,
 				BD5DD4F127AA323D00FA14EB /* Screens */,
-				BD5DD4F027AA322A00FA14EB /* Extensions */,
 				BD5DD4EF27AA322000FA14EB /* Style */,
 				BD5DD4EE27AA321400FA14EB /* DataLayer */,
 				BD5DD4BB27AA2EE600FA14EB /* AppDelegate.swift */,
@@ -180,13 +179,6 @@
 				BDB42C0227ABC3D1006FE792 /* ImageView.swift */,
 			);
 			path = Style;
-			sourceTree = "<group>";
-		};
-		BD5DD4F027AA322A00FA14EB /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BD5DD4F127AA323D00FA14EB /* Screens */ = {
