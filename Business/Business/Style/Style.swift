@@ -9,6 +9,7 @@ import UIKit
 
 struct Style {
     enum Size: String {
+        case XS
         case S
         case M
         case L
@@ -16,6 +17,8 @@ struct Style {
         
         func value() -> CGFloat {
             switch self {
+            case .XS:
+                return 6.0
             case .S:
                 return 8.0
             case .M:
@@ -40,7 +43,7 @@ struct Style {
             case .title:
                 return UIFont.boldSystemFont(ofSize: 20.0)
             case .subtitle:
-                return UIFont.systemFont(ofSize: 18.0)
+                return UIFont.boldSystemFont(ofSize: 15.0)
             }
         }
     }
