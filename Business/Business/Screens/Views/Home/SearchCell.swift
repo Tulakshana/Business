@@ -17,13 +17,13 @@ class SearchCell: UITableViewCell {
     @IBOutlet weak var thumbView: ImageView!
     @IBOutlet weak var nameLabel: UILabel! {
         didSet {
-            nameLabel.font = Style.Font.title.value()
+            nameLabel.font = Style.Font.subtitle.value()
             nameLabel.textColor = Style.Color.text.value()
         }
     }
     @IBOutlet weak var ratingLabel: UILabel! {
         didSet {
-            ratingLabel.font = Style.Font.subtitle.value()
+            ratingLabel.font = Style.Font.paragraph.value()
         }
     }
 

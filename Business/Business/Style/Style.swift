@@ -40,7 +40,7 @@ struct Style {
             case .title:
                 return UIFont.boldSystemFont(ofSize: 20.0)
             case .subtitle:
-                return UIFont.systemFont(ofSize: 18.0)
+                return UIFont.boldSystemFont(ofSize: 15.0)
             }
         }
     }

@@ -25,13 +25,16 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="179" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfa-Ib-9dS">
-                        <rect key="frame" x="116" y="8" width="384" height="171"/>
+                        <rect key="frame" x="116" y="8" width="384" height="179"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prk-Se-vNs">
-                        <rect key="frame" x="116" y="187" width="384" height="0.0"/>
+                        <rect key="frame" x="116" y="195" width="384" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="gBq-Dl-f6d"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -71,11 +74,6 @@
                         </userDefinedRuntimeAttributes>
                     </constraint>
                     <constraint firstAttribute="trailing" secondItem="vfa-Ib-9dS" secondAttribute="trailing" constant="8" id="c8M-U2-XtG" customClass="LayoutConstraint" customModule="Business" customModuleProvider="target">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="style" value="S"/>
-                        </userDefinedRuntimeAttributes>
-                    </constraint>
-                    <constraint firstAttribute="bottom" secondItem="Prk-Se-vNs" secondAttribute="bottom" constant="8" id="xVW-m1-2mo" customClass="LayoutConstraint" customModule="Business" customModuleProvider="target">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="style" value="S"/>
                         </userDefinedRuntimeAttributes>
