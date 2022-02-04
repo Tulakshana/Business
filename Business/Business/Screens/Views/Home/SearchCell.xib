@@ -25,13 +25,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="179" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfa-Ib-9dS">
-                        <rect key="frame" x="116" y="8" width="384" height="179"/>
+                        <rect key="frame" x="116" y="8" width="384" height="151"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prk-Se-vNs">
-                        <rect key="frame" x="116" y="195" width="384" height="20"/>
+                        <rect key="frame" x="116" y="167" width="384" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="N7y-BI-e8m"/>
                         </constraints>
@@ -46,6 +46,7 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="style" value="S"/>
                         </userDefinedRuntimeAttributes>
                     </constraint>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Prk-Se-vNs" secondAttribute="bottom" constant="8" id="6mP-GU-GqL" customClass="LayoutConstraint" customModule="Business" customModuleProvider="target"/>
                     <constraint firstItem="vfa-Ib-9dS" firstAttribute="leading" secondItem="ibg-w8-K5q" secondAttribute="trailing" constant="8" id="Jct-6g-QUv" customClass="LayoutConstraint" customModule="Business" customModuleProvider="target">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="style" value="S"/>
